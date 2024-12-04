@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-        <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
     <title>Document</title>
+    <!-- Applying styles to both sun and moon -->
+     <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }   
+
+    </style>
 </head>
 <body>
-    <h1 class="text-6xl">Calculator Time</h1>
+    <main class="bg-[rgba(60,57,71,0.35)] text-4xl min-h-screen flex items-center justify-center">
+        <!-- main calculator body -->
+        <div class="bg-[#22252D] rounded-xl pt-4 w-72 flex flex-col items-center justify-start">
+            <!-- We are going to have 3 sections  -->
+             <!-- First section is going to be the light/dark theme switcher -->
+              <div class="py-2 px-2.5 bg-[#292D36] flex gap-6 rounded-xl">
+                <!-- Sun icon -->
+                <img src="./icons/day.svg" class="w-4" alt="sun">
+                <!-- Moon icon -->
+                <img src="./icons/night.svg" class="w-4" alt="moon">
+              </div>
+              <!-- Second section is going to be the calculation and result displayer -->
+              <div class="text-white mt-16 text-right w-full px-6 " >
+                <p class="text-lg">308 x 42
+                </p>
+                <h1 class="text-5xl">12,936</h1>
+              </div>
+            <!-- Third section is going to be the calculator buttons -->
+                <!-- <div class="bg-[#292D36] mt-8 rounded-2xl pb-40 w-full p-4">
+                    <h1>hi
+
+                    </h1>
+                </div> -->
+        </div>
+    </main>
 </body>
 </html>
