@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+
     <title>Document</title>
     <!-- Applying styles to both sun and moon -->
      <style>
@@ -30,18 +31,36 @@
                 <img src="./icons/night.svg" class="w-4" alt="moon">
               </div>
               <!-- Second section is going to be the calculation and result displayer -->
-              <div class="text-white mt-16 text-right w-full px-6 " >
-                <p class="text-lg">308 x 42
+              <div class="text-white mt-16 text-right w-full px-6 h-16" >
+                <p class="text-lg display">
                 </p>
-                <h1 class="text-5xl">12,936</h1>
+                <h1 class="text-5xl result"></h1>
               </div>
             <!-- Third section is going to be the calculator buttons -->
-                <!-- <div class="bg-[#292D36] mt-8 rounded-2xl pb-40 w-full p-4">
-                    <h1>hi
-
-                    </h1>
-                </div> -->
+                <div class="btn bg-[#292D36] mt-8 rounded-3xl  w-full p-6 grid grid-cols-4 gap-4">
+                    <button class="text-[#25EED0] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">Ac</button>
+                    <button class="text-[#25EED0] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">+/-</button>
+                    <button class="text-[#25eed0] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">%</button>
+                    <button class="text-[#D55E5F] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">÷</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">7</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">8</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">9</button>
+                    <button class="text-[#D55E5F] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">x</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">4</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">5</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">6</button>
+                    <button class="text-[#D55E5F] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">-</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">1</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">2</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">3</button>
+                    <button class="text-[#D55E5F] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">+</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">⟳</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">0</button>
+                    <button class="text-[#D8D9DB] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">.</button>
+                    <button class="text-[#D55E5F] bg-[#272B33] rounded-xl uppercase font-sans text-lg font-semibold px-3 py-2.5">=</button>
+                </div>
         </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
