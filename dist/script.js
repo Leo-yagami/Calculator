@@ -34,6 +34,11 @@ btn1.addEventListener('click', (e) =>{
         clickedData == '÷' ||
         clickedData == 'x'
     ){
+        if(!operand1){
+            if(clickedData == '-')document.querySelector('.display').textContent = clickedData;
+            operand1 = clickedData;
+            return;
+        }
         if(operator)return;
         operator = clickedData;
         document.querySelector('.display').textContent+= " " + clickedData + " ";
@@ -73,5 +78,14 @@ btn1.addEventListener('click', (e) =>{
         operand1 = "";operand2 = "";
         document.querySelector('.display').textContent = "";
         operator = null;
+    }
+    else if(clickedData == "+/-"){
+        console.log("Again")
+        if(operand1){
+            operand2 = operand2? '-' + operand2 : '-';
+            return;
+        }
+        operand1 = '-' + operand1;
+        // document.querySelector('.display').textContent = document.querySelector('.display').textContent.indexOf(operator);
     }
 });

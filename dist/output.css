@@ -799,6 +799,10 @@ video {
   transition-duration: 300ms;
 }
 
+.duration-700 {
+  transition-duration: 700ms;
+}
+
 .hover\:bg-\[rgba\(153\2c 153\2c 153\2c 0\.1\)\]:hover {
   background-color: rgba(153,153,153,0.1);
 }
