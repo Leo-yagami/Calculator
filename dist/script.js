@@ -17,6 +17,7 @@ nightEl.addEventListener('click', () =>{
 
 })
 
+const list = [];
 // Calculator logic
 const btn1 = document.querySelector('.btn');
 // Declaring the 3 variables
@@ -63,6 +64,10 @@ btn1.addEventListener('click', (e) =>{
             }
                 
         }
+        let obj = {};
+        obj["_operation"] = `${operand1} ${operator} ${operand2}`; 
+        obj["_result"] = `${result}`;
+        list.push(obj);
         operand1 = "";operand2 = "";
         document.querySelector('.result').textContent = result;
         result = null;
@@ -103,7 +108,7 @@ btn1.addEventListener('click', (e) =>{
         if('0' <= text[text.length] <= '9'){
             if(operand2)operand2 = operand2.slice(0, operand2.length - 1);
             else operand1 = operand1.slice(0, operand2.length - 1);
-            console.log(operand1, operand2)
+            // console.log(operand1, operand2)
         }
         if(text[text.length-1] == " ")text.slice(0, text.length - 1)
         document.querySelector('.display').textContent = text.slice(0,text.length-1);
@@ -113,10 +118,22 @@ btn1.addEventListener('click', (e) =>{
         if(text[text.length-1] == '.')return;
         if(operand1.includes('.')){
             if(operand2 && operand2.includes('.'))return;
-            else if(operand)
+            // else if(operand)
         }
         if(operand2)operand2+='.'
         else operand1+='.'
         document.querySelector('.display').textContent += '.';
     }
 });
+
+// Attaching event listener to history button
+const historyEl = document.querySelector('.history');
+historyEl.addEventListener('click', () =>{
+    console.log("history");
+    list.forEach(ops =>{
+        if(ops["_operation"])
+        console.log(`Operation: ${ops["_operation"]}`)
+        if(ops["_result"])
+        console.log(`Result: ${ops["_result"]}`)
+    })
+})
