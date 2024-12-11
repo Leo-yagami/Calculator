@@ -2,6 +2,7 @@
 const dayEl = document.querySelector('.day');
 const nightEl = document.querySelector('.night');
 const htmlEl = document.documentElement;
+let operators = ['x', '÷', '%', '+', '-'];
 dayEl.addEventListener('click', () =>{
     if(nightEl.classList.contains('fillInactive'))return;
     dayEl.classList.toggle('fillInactive');
@@ -19,7 +20,7 @@ nightEl.addEventListener('click', () =>{
 // Calculator logic
 const btn1 = document.querySelector('.btn');
 // Declaring the 3 variables
-let operand1, operand2, operator;
+let operand1 = "", operand2 = "", operator;
 //Declaring the refill-[rgba(115,117,122,0.70)]sutl
 let result;
 // Operation statement variable
@@ -34,12 +35,18 @@ btn1.addEventListener('click', (e) =>{
         clickedData == '÷' ||
         clickedData == 'x'
     ){
-        if(!operand1){
-            if(clickedData == '-')document.querySelector('.display').textContent = clickedData;
+        if(!operand1 || operator){
+            if(clickedData == '-'){
+                document.querySelector('.display').textContent += clickedData;
+                operationName += operand1? " " +clickedData: operand1;
+                console.log(operationName);
+            }
+            if(operand1)
+            operand2 = clickedData;
+            else
             operand1 = clickedData;
             return;
         }
-        if(operator)return;
         operator = clickedData;
         document.querySelector('.display').textContent+= " " + clickedData + " ";
         console.log("The operator is: " + operator)
@@ -48,11 +55,11 @@ btn1.addEventListener('click', (e) =>{
         console.log(operand1, operand2, operator)
         if(operand1 && operand2 && operator){
             if(operator == '%')result = Math.round(+operand1) % Math.round(+operand2);
-            else if(operator == '-')result = +operand1 - +operand2;
-            else if(operator == '+')result = +operand1 + +operand2;
-            else if(operator == 'x')result = +operand1 * +operand2;
+            else if(operator == '-')result = (+operand1 - +operand2).toFixed(2);
+            else if(operator == '+')result = (+operand1 + +operand2).toFixed(2);
+            else if(operator == 'x')result = (+operand1 * +operand2).toFixed(2);
             else if(operator == '÷'){
-                result = (+operand1 / +operand2);
+                result = (+operand1 / +operand2).toFixed(2);
             }
                 
         }
@@ -87,5 +94,29 @@ btn1.addEventListener('click', (e) =>{
         }
         operand1 = '-' + operand1;
         // document.querySelector('.display').textContent = document.querySelector('.display').textContent.indexOf(operator);
+    }
+    else if(clickedData == "Del"){
+        let text = document.querySelector('.display').textContent; 
+        // Deletion logic
+        if(text.length == 0)return;
+        if(operators.includes(text[text.length] - 1))operator="";
+        if('0' <= text[text.length] <= '9'){
+            if(operand2)operand2 = operand2.slice(0, operand2.length - 1);
+            else operand1 = operand1.slice(0, operand2.length - 1);
+            console.log(operand1, operand2)
+        }
+        if(text[text.length-1] == " ")text.slice(0, text.length - 1)
+        document.querySelector('.display').textContent = text.slice(0,text.length-1);
+    }
+    else{
+        let text = document.querySelector('.display').textContent;
+        if(text[text.length-1] == '.')return;
+        if(operand1.includes('.')){
+            if(operand2 && operand2.includes('.'))return;
+            else if(operand)
+        }
+        if(operand2)operand2+='.'
+        else operand1+='.'
+        document.querySelector('.display').textContent += '.';
     }
 });
